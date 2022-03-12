@@ -8,6 +8,7 @@
         "start": "node src/index.js"
     },
     "dependencies": {
-        "express": "^4.17.3"
+        "express": "^4.17.3",
+        "react": "^17.2.0"
     }
 }

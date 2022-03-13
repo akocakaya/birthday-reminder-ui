@@ -1,25 +1,15 @@
 import express          from 'express';
-import React            from 'react';
-import ReactDOMServer   from 'react-dom/server';
 
-import SignUp           from './client/pages/auth/sign-up.js';
+import * as Utils       from './utils/index.js';
 
 const app = express();
 
+app.use(express.static('public'));
+
 app.get('/', (_req, res) => {
-    const content = ReactDOMServer.renderToString(<SignUp />);
+    const template = Utils.renderer();
 
-    const html = `
-        <html>
-            <head></head>
-            <body>
-                <div id="root">${content}</div>
-                <script src="bundle.js"></script>
-            </body>
-        </html>
-    `;
-
-    res.send(html);
+    res.send(template);
 });
 
 const applicationPort = 3000;

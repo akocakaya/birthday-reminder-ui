@@ -9,7 +9,17 @@ const app = express();
 app.get('/', (_req, res) => {
     const content = ReactDOMServer.renderToString(<SignUp />);
 
-    res.send(content);
+    const html = `
+        <html>
+            <head></head>
+            <body>
+                <div id="root">${content}</div>
+                <script src="bundle.js"></script>
+            </body>
+        </html>
+    `;
+
+    res.send(html);
 });
 
 const applicationPort = 3000;

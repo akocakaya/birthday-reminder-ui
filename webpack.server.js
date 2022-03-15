@@ -41,7 +41,6 @@ module.exports = {
             },
         ],
     },
-
     externals: [
         webpackNodeExternals(),
     ],

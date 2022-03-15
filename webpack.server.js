@@ -41,7 +41,10 @@ module.exports = {
             },
         ],
     },
+
+    // tell webpack to not bundle any libraries into our output bundle 
+    // on the server if that library exist inside the node module folder
     externals: [
         webpackNodeExternals(),
     ],
-}
+};

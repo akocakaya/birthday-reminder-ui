@@ -6,8 +6,8 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.get('/', (_req, res) => {
-    const template = Utils.renderer();
+app.get('*', (req, res) => {
+    const template = Utils.renderer(req);
 
     res.send(template);
 });

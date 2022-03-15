@@ -8,7 +8,7 @@ module.exports = {
     target: 'node',
 
     // tell webpack the root file of our server app
-    entry: path.resolve(__dirname, 'src/index.js'),
+    entry: path.resolve(__dirname, 'src/server/index.js'),
 
     // tell webpack where to put the output file
     // that is generated

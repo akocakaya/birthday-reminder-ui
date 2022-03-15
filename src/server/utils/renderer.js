@@ -2,7 +2,7 @@ import React                from 'react';
 import ReactDOMServer       from 'react-dom/server';
 import { StaticRouter }     from 'react-router';
 
-import AppRouter            from '../client/router/index.js';
+import AppRouter            from '../../client/router/index.js';
 
 export default req => {
     const context = {};

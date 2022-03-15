@@ -1,10 +1,16 @@
-import React            from 'react';
-import ReactDOMServer   from 'react-dom/server';
+import React                from 'react';
+import ReactDOMServer       from 'react-dom/server';
+import { StaticRouter }     from 'react-router';
 
-import SignUp           from '../client/pages/auth/sign-up.js';
+import AppRouter            from '../client/router/index.js';
 
-export default () => {
-    const content = ReactDOMServer.renderToString(<SignUp />);
+export default req => {
+    const context = {};
+    const content = ReactDOMServer.renderToString(
+        <StaticRouter location={req.path} context={context}>
+            <AppRouter />
+        </StaticRouter>
+    );
 
     const template = `
         <html>
@@ -17,4 +23,4 @@ export default () => {
     `;
 
     return template;
-}
+};

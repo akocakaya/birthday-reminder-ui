@@ -15,4 +15,5 @@ app.get('*', (req, res) => {
 const applicationPort = 3000;
 app.listen(applicationPort, () => {
     console.log(`Listening on port ${applicationPort}`);
+    console.log(`Node version: ${process.versions.node}`);
 });

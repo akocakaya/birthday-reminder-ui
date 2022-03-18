@@ -22,7 +22,7 @@ app.listen(applicationPort, () => {
 
 app.use(bodyParser.json());
 
-// refactor
+// TODO: refactor
 const router = express.Router();
 router.route('/api/auth/sign-up')
     .post( (req, res, _next) => {

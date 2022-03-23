@@ -2,16 +2,13 @@ import React                from 'react';
 import ReactDOMServer       from 'react-dom/server';
 import { StaticRouter }     from 'react-router';
 import { Provider }         from 'react-redux'; 
-import { createStore }      from 'redux';
 
 import App                  from '../../app/index.js';
-import reducer              from '../../reducer/index.js';
+import createStore          from './store';
 
 export default req => {
-    // store creation for server
-    const store = createStore(
-        reducer
-    );
+
+    const store = createStore();
 
     const context = {};
     const content = ReactDOMServer.renderToString(
